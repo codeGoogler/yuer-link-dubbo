@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="yuer-link-provider:war">
+    <output-path>$PROJECT_DIR$/ yuer-link-provider/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>yuer-link-provider</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="yuer-link-provider-1.0.0.war">
+      <element id="artifact" artifact-name="yuer-link-provider:war exploded" />
+    </root>
+  </artifact>
+</component>

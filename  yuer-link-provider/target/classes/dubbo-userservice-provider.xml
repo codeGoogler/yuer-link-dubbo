@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+        <!--服务提供者声明：必须保证服务名称的唯一性，他的名称是dubbo内部使用的唯一标识-->
+        <dubbo:application name="yuer-link-provider" />
+
+        <!-- 定义访问服务协议的名称，端口号，dubbo官方推荐使用dubbo协议，dobbo默认的端口号是：20880-->
+        <dubbo:protocol name="dubbo" port="20880" />
+
+        <!--暴露服务的接口，dubbo service
+          interface:暴漏的全类名的服务接口
+          ref：接口引用的实现类在Spring容器中的唯一标识
+          registry：如果不使用注册中心，则设置为N/A
+        -->
+        <dubbo:service interface="com.yuer.dubbo.provider.service.UserService" ref="UserService" registry="N/A"/>
+     <!--   <dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+       <!-- 将接口中的实现类添加到Srping容器中-->
+        <bean id="UserService" class="com.yuer.dubbo.provider.service.impl.UserServiceImpl"/>
+
+</beans>

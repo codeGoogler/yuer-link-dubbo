@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+        <!--服务提供者声明：必须保证服务名称的唯一性，他的名称是dubbo内部使用的唯一标识-->
+        <dubbo:application name="yuer-link-consumer" />
+
+
+        <!--暴露服务的接口，dubbo service
+          reference:暴漏的全类名的服务接口
+          id：接口引用的实现类在Spring容器中的唯一标识
+          registry：如果不使用注册中心，则设置为N/A
+        -->
+        <dubbo:reference interface="com.yuer.dubbo.provider.service.UserService" url="dubbo://localjost:20880" id="UserService" registry="N/A"/>
+
+
+</beans>

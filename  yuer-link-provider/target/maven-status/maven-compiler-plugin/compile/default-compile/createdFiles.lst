@@ -1,0 +1,4 @@
+com\yuer\dubbo\provider\service\UserService.class
+com\yuer\dubbo\provider\service\impl\UserServiceImpl.class
+com\yuer\dubbo\provider\YuerLinkProvider.class
+com\yuer\dubbo\provider\model\UserModel.class
